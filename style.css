@@ -1,0 +1,1581 @@
+/*
+THIS IS THE CSS FILE FOR THE MAIN PAGE 
+
+NOTE ::: THIS CSS FILE IS PROPERLY COMMENTED WHEREVER REQUIRED 
+
+NOTE ::: IN THIS FILE CSS CODE IS GROUPED INTO SECTION , 
+		 
+		 Eg. IF U WANT TO SEE THE CSS OF ARTIST SECTION , THEY ARE GROUPED SEPERATELY . 
+				If you want to see the keyframes of animation . they are grouped together
+
+*/
+
+
+/*THIS IS BODY PROPERTIES*/
+body{
+	margin: 0;
+	background-image: url(media/bg1.jpg); 
+	position: fixed; /* i have made the page fixed , i.e. u can't scroll the page */
+	width: 100%;
+}
+
+/*hided the scrollbar at the right of the browser*/
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*this is a common class used to set the display to inline block*/
+.display-ib{
+	display: inline-block;
+}
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	 ANIMATION KEYFRAMES   **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+@keyframes zoom-in-zoom-out{
+	/*zooms in and zooms out the content*/
+	from{
+		transform:scale(1);
+	}
+	to{
+		transform:scale(1.1);
+	}
+}
+@keyframes ring{
+	/*used to ring and vibrate the notification bell  icon*/
+	from{
+		transform: rotate(-20deg);
+	}
+	to{
+		transform: rotate(20deg);
+	}
+}
+@keyframes rotating{
+	/*used to constantly keep rotating the logo of the website at top left corner*/
+	from{
+		transform: rotate(-360deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@keyframes hover-shadow-change{
+	/*used to change the shadow on hover*/
+	from{
+		background-color: rgba(203,187,187,0.5);
+	}
+	to{
+		background-color: rgba(203,187,187,0.4);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	    TOP NAV BAR        **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+/*top nav bar section */
+nav{
+	height: 50px;
+	width: 100%;
+	background-image: linear-gradient(black , transparent);
+	padding-top:10px;
+	display: flex; 
+	position: relative;
+}
+
+/*logo image div*/
+#logo{
+	margin-left: 10px;
+}
+
+/*logo image*/
+#logo img{
+	height: 60px;
+	width: 60px;
+	animation: rotating 3s linear infinite ; /* the image always keeps rotating*/
+}
+
+/*player name just after the logo*/
+#player-name{
+	color: white;
+	font-family: sans-serif;
+	font-size: 1rem;
+	margin-top: 6px;
+	line-height: 23px;
+	letter-spacing: 1px;
+}
+
+/*this is the property of heart shaped icon which is visible only at small pixel devices
+i.e. Favourite word is substituted by heart icon*/
+#favourite-icon{
+	color: red;
+	margin-left: 4%;
+	margin-top: 10px;
+	font-size: 2.5rem;
+	animation: zoom-in-zoom-out 1s ease-in-out infinite alternate; /*zoom-in zoom-out effect*/
+	display: none;/* initially i.e. at large pixel device display is none*/
+}
+
+/*favourite word at the top */
+#favourite{
+	color: white;
+	margin-left: 12%;
+	font-family: sans-serif;
+	margin-top: 20px;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	font-weight: bold;
+	animation: zoom-in-zoom-out 1s ease-in-out infinite alternate;/* it always zooms in zooms out*/
+}
+
+/*this is the property of searchbox div*/
+#search{
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px;
+	height: 15px;
+	margin-top: 10px;
+	margin-left: 25%;
+	width: 20%;
+	position: absolute;
+	right: 250px;
+}
+#music{
+	margin-left: 5px;  /*left icon in the search box , it disappears on small scale devices*/
+}
+#search input{ /*PROPERTIES OF INPUIT BOX IN SEARCH */
+	margin-left: 10px;
+	border-style: none;
+	width:60%;
+}
+input:focus{ /*THIS IS TO AVOID BORDER WHEN USER TYPES IN THE INPUT BOX*/
+	outline: none;
+}
+#microphone{ /*PROPERTIES OF MICROPHONE ICON AT THE RIGHT OF SEARCH BOX*/
+	float: right;
+	margin-right: 5px;
+	color: red;
+}
+#notification{
+	position: absolute;
+	right: 150px;
+	color: yellow ; 
+	font-size: 1.7rem;
+	margin-top: 13px;
+	animation: ring 0.1s linear 2s alternate 100; /*ANIMATION USED TO RING THE BELL*/
+}
+#user{
+	position: absolute;
+	right: 30px;
+	height: 50px;
+	width: 50px;
+}
+#user img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+
+/************************ MEDIA QUERIES **************************/
+/*MEDIA CODES ARE SAME AS THAT IN ARTIST SECTION*/
+@media (max-width: 750px){
+	#favourite{
+		display: none;
+	}
+	#favourite-icon{
+		display: initial;
+		font-size: 1.7rem;
+		margin-top: 15px;
+	}
+	#notification{
+		right:110px;
+	}
+	#search{
+		right: 175px;
+		width:30%;
+		height: 15px;
+	}
+}
+@media (max-width: 650px){
+	
+	#search{
+		right: 150px;
+		width:30%;
+		height: 15px;
+	}
+	#music{
+		display: none;
+	}
+	#notification , #favourite-icon {
+		font-size: 1.5rem;
+		margin-top: 14px;
+	}
+	#logo img , #user{
+		height: 50px ; 
+		width: 50px;
+		margin-top: 3px;
+	}
+	#player-name{
+		font-size: 0.9rem;
+		line-height: 15px;
+		margin-top: 13px;
+	}
+}
+@media (max-width: 550px){
+	#search{
+		right: 150px;
+		width:30%;
+		height: 15px;
+	}
+	#notification , #favourite-icon {
+		font-size: 1.5rem;
+		margin-top: 13px;
+	}
+	#logo img , #user{
+		height: 40px ; 
+		width: 40px;
+		margin-top: 6px;
+	}
+	#player-name{
+		font-size: 0.9rem;
+		line-height: 15px;
+		margin-top: 13px;
+	}
+}
+@media (max-width: 470px){
+	#notification{
+		right:70px;
+	}
+	#search{
+		right: 100px;
+		width:30%;
+		height: 15px;
+	}
+	#user{
+		right: 20px;
+	}
+}
+@media (max-width: 400px){
+	#favourite-icon{
+		display: none;
+	}
+	#user{
+		right: 10px;
+	}
+	#notification{
+		right: 60px;
+	}
+}
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	    MAIN SECTION       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+main{
+	/*OVERFLOW IS SCROLL WITH SCROLL BAR HIDDEN AND DISPLAY IS INLINE BLOCK BECAUSE WE NEED TO PLACE ASIDE SECTION AS WELL*/
+	overflow: scroll;
+	margin:10px;
+	height: 86vh;
+	width:70%;
+	display: inline-block;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+main section:not(#carousel){
+	display: flex; 
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+}
+.section-title{
+	color: white;
+	text-align: left;
+	margin-left: 50px;
+	font-family: sans-serif;
+}
+
+/*########################################################################################
+**********************************     CAROUSEL    **************************************
+##########################################################################################*/
+#carousel{
+	display: flex;	
+	justify-content: center;
+	align-items: center;
+	height: 20vw;
+}
+#carousel div{
+	width:30vw;
+  	height: 15vw;
+	position: relative;
+}
+#carousel div img{
+	height: 100%;
+	width: 100%;
+}
+#carousel1{
+	left:5%;
+	filter: blur(2px);  /*USED TO BLUR THE CAROUSEL*/
+  -webkit-filter: blur(2px);
+}
+#carousel2{
+	z-index: 1;
+}
+#carousel3{
+	left:-5%;
+	filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+#carousel div:hover{
+	width: 36vw;
+	height: 18vw;
+	position: relative;
+	z-index: 2;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 0 0 10px 8px black;
+	filter: blur(0px);
+  	-webkit-filter: blur(0px);
+  	cursor: pointer;
+}
+#carousel1:hover~#carousel2{
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+}
+#carousel3:hover #carousel2{
+	opacity: 0.4;
+}
+#carousel1:hover,#carousel3:hover{
+	opacity: 1;
+}
+
+/*########################## MEDIA QUERIES ######################*/
+
+@media (max-width: 900px){
+	#carousel{
+		height: 23vw;
+	}
+	#carousel div{
+		width:34vw;
+	  	height: 20vw;
+	}
+	#carousel div:hover{
+		width: 38vw;
+		height: 24vw;
+	}
+}
+
+@media (max-width: 400px){
+	#carousel{
+		height: 250px;
+		flex-direction: column;
+		/*AT 400 PX THE FLEX DIRECTION CHANGES FROM ROW TO COLUMN*/
+	}
+	#carousel div{
+		width:50vw;
+	  	height: 30vw;
+	}
+	#carousel div:hover{
+		width: 57vw;
+		height: 37vw;
+	}
+	#carousel1{
+		left:0%;
+		bottom: -25%;
+		filter: blur(2px);
+	  -webkit-filter: blur(2px);
+	}
+	#carousel2{
+		z-index: 1;
+	}
+	#carousel3{
+		left:0%;
+		top:-25%;
+	}
+	#release{
+		margin-top: -10px;
+	}
+}
+
+
+
+
+/*########################################################################################
+*******************************     LATEST RELEASE    ************************************
+##########################################################################################*/
+
+#release>div{
+	width: 40%;
+	height:100px;
+	background-color: rgba(63,42,106,0.4);
+	border-radius: 5px;
+	margin-top: 20px;
+}
+.release-card{
+	display: flex ; 
+	margin-top: 10px;
+	color: white;
+	position: relative;
+}
+.hover-play{
+	height: 100%;
+	width: 100%;
+	display: none;
+	position: absolute;
+	border-radius: 5px;
+	background-color: rgba(195,223,198,0.6);
+	animation: hover-shadow-change 4s ease-in-out infinite alternate;
+	transition: box-shadow 2s ease-in-out;
+}
+.hover-play-button{
+	position: absolute;
+	font-size: 2rem;
+	top:35px;
+	left: 43px;
+	color: black;
+	animation: zoom-in-zoom-out 0.3s ease-in-out infinite alternate;/* ZOOM IN ZOOM OUT EFFECT OF PLAY BUTTON*/
+}
+.release-card:hover .hover-play{
+	display: initial;
+	box-shadow: 0 0 10px 1px black ;
+}
+.hover-play-button{
+	cursor: pointer;
+}
+.release-card img{
+	height: 100px; 
+	width: 100px;
+	border-radius: 5px;
+}
+.name-date{
+	margin-left: 20px;
+	margin-top: 25px;
+	line-height: 1.5rem;
+	color: white;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+}
+.release-date{
+	color:rgb(40,236,104,0.9);
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-family: monospace;
+}
+.option{
+	position: absolute;
+	top:10px;
+	right: 20px;
+	line-height: 1.5rem;
+	z-index: 1;
+}
+.release-dropdown-icon { /*PROPERTIES OF THREE DOTS FOR MENU*/
+	float: right;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: yellow;
+}
+.release-dropdown-icon:hover{
+	cursor: pointer;
+}
+.release-dropdown-menu{ /*INITIALLY THE MENU IS HIDDEN*/
+	display: none;
+	margin-right: 16px;
+	background-color: cyan;
+	transition: box-shadow 2s ease-in-out;
+	border-radius: 20px;
+}
+.release-dropdown-menu ul{
+	margin: 0;
+	padding: 0;
+	border:4px solid red;
+	margin-top: 20px;
+	border-radius: 20px;
+}
+.release-dropdown-menu ul li{
+	padding:0px 10px 0px 10px;
+	margin-top: 0px;
+	color:blue;
+	font-weight: bold;
+	font-size: 14px;
+}
+.release-dropdown-menu ul li:hover{
+	cursor: pointer;
+}
+.release-dropdown-menu ul li:first-child{
+	padding-top: 10px;
+	border-bottom: none;
+}
+.option:hover .release-dropdown-menu{
+	/*MENU IS DISPLAYED ON HOVERING*/
+	display: block;
+	box-shadow: 0 0 20px 4px black;
+}
+.time{
+	position: absolute;
+	right: 15px;
+	top:30px;
+	line-height: 1.5rem;
+}
+
+/*########################   MEDIA QUERIES   ######################*/
+
+@media (max-width: 650px){
+	.name-date{
+		margin-left: 8px;
+	}
+	#release>div{
+		width:400px!important;
+	}
+	#release{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+@media (max-width: 945px){
+	.name-date{
+		margin-left: 5px;
+	}
+}
+@media (max-width: 900px){
+	.name-date{
+		margin-left: 8px;
+	}
+}
+
+
+
+
+
+
+/*########################################################################################
+*******************************     POPULAR ARTISTS   ************************************
+##########################################################################################*/
+#artists{
+	margin-right: 25px;
+	margin-left: 25px;
+	margin-top: -5px;
+}
+#artists a{
+	color: black;
+}
+.expand-artist{
+	position: absolute;
+	top: 0;
+	left: 1px;
+	height: 110px ; 
+	width: 110px;
+	margin:auto;
+	padding: 0;
+	display: none;
+	border-radius: 50%;
+	background-color: rgba(203,187,187,0.5);
+	box-shadow: 0 0 10px 1px black ;
+}
+.expand-artist-icon{
+	position: absolute;
+	top:40px;
+	left: 45px;
+	font-size: 2rem;
+	animation: zoom-in-zoom-out 0.3s ease-in-out infinite alternate;
+}
+.artist-detail:hover .expand-artist{
+	display: block;
+	/*z-index: 1;*/
+	cursor: pointer;
+}
+#artists>div{
+	height: auto;
+	width:110px;
+	padding: 0;
+	margin:0;
+	position: relative;
+	margin-top: 12px;
+}
+.artist-image{
+	height: 110px ; 
+	width: 110px;
+	margin:auto;
+	padding: 0;
+}
+
+.artist-image img{
+	border-radius: 50%;
+	height: 100%;
+	width: 100%;
+}
+
+.artist-name{
+	text-align: center;
+	color: white;
+	font-family: sans-serif;
+	margin-top: 10px;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+
+@media (max-width: 1074px){
+	#artists>div{
+		width:90px;
+	}
+	.artist-image{
+		height: 90px ; 
+		width: 90px;
+	}
+	.expand-artist{
+		height: 90px ; 
+		width: 90px;
+		left: 1px;
+	}
+	.expand-artist-icon{
+		position: absolute;
+		top:30px;
+		left: 35px;
+	}
+}
+
+@media (max-width: 670px){
+	#artists>div{
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+
+/*########################################################################################
+*******************************        STATIONS       ************************************
+##########################################################################################*/
+
+#stations{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-image: linear-gradient(90deg,rgba(232,81,7,0.7),rgba(40,21,229,0.6),rgba(232,81,7,0.7));
+	/*there are three colours in gradient*/
+	width:90%;
+	margin:auto;
+	position: relative;
+}
+#station-list{
+	flex-grow: 1;
+	flex-shrink: 1;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin:10px;
+}
+#station-logo{
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 140px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	flex-direction: column;
+	justify-content: center;
+}
+#bottom{
+	width:190px;
+	height: 100px ; 
+	background-color: yellow; 
+	position: relative;
+	margin-top: 20px;
+}
+#mid{
+	width:170px;
+	height: 120px ; 
+	background-color: #F0BC10; 
+	position: relative;
+	top:-10px;
+	left:10px;
+}
+#top{
+	width:150px;
+	height: 140px ; 
+	position: relative;
+	top:-10px;
+	left:10px;
+	background-color: red ; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#top img{
+	height:70px;
+	width: 70px;
+	margin-top: -10px;
+	animation: rotating 3s linear infinite ; /* to constantly rotate the image on the top layer*/
+}
+#station-title{
+	color: white;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 10px;
+	font-family: "Segoe UI", Arial, sans-serif;
+}
+.station-detail{
+	 height: 80px;
+	 width: 80px;
+	 background-image: linear-gradient(transparent,blue 50%);
+	 position: relative;
+	 margin-left: 5px;
+	 margin-right: 5px;
+	 border-radius: 50%;
+	 cursor: pointer;
+	 margin-top: 5px;
+	 margin-bottom: 5px;
+}
+.station-detail:hover{
+	 background-image: linear-gradient(transparent,black);
+}
+.station-image{
+	height: 100%;
+	width: 100%;
+	opacity: 0.7;
+}
+.station-image img{
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 0.8px solid black;
+}
+.station-name{
+	position: absolute;
+	top:0;
+	color: white;
+	font-weight: bold;
+	font-size: 1.1rem;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 900px){
+
+	/*at 900 px I have re3duced the size of station logo*/
+	#station-logo{
+		height: 120px;
+	}
+	#bottom{
+		width:170px;
+		height: 80px ; 
+	}
+	#mid{
+		width:150px;
+		height: 100px ; 
+	}
+	#top{
+		width:130px;
+		height: 120px ; 
+	}
+	#top img{
+		height:45px;
+		width: 45px;
+	}
+	#station-title{
+		font-size: 1rem;
+	}
+}
+
+
+
+
+
+
+
+
+/*########################################################################################
+*******************************        CATEGORY        ************************************
+##########################################################################################*/
+#category{
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-right: 5px; 
+	padding-left: 5px;
+	display: flex;
+	justify-content: space-around;
+}
+.category-card{
+	width: 20vw ; 
+	height: 15vw;
+	overflow: hidden;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding: 0;
+	position: relative;
+	display: inline-block;
+}
+.category-card-background{
+	height: 100%;
+	width: 100%;
+	overflow: hidden; /*OVERFLOW IS HIDDEN TO GIVE PARALLEX EFFECT WHEN SCALE CHANGES*/
+	margin:0px;
+	padding: 0px;
+	transition: transform 0.5s ease-in-out;
+	opacity: 0.8;
+}
+.category-card-name{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	color: white;
+	font-family: sans-serif;
+	font-size: 1.5rem;
+	font-weight: bolder;
+}
+.category-card-name:hover{
+	cursor: pointer;
+}
+.category-card:hover .category-card-background{
+	transform: scale(1.5);  /*SCALE OF BACKGROUND CHANGES ON HOVER*/
+}
+.category-card:hover .category-card-name{
+	background-image: linear-gradient(transparent,blue 180%); /*ALSO GRADIENT IS APPLIED ON HOVER*/
+}
+
+/*######################   MEDIA QUERIES   ###################*/
+@media (max-width: 900px){
+	.category-card{
+		width: 28vw ; 
+		height: 19vw;
+	}
+	.category-card-name{
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+}
+
+@media (max-width: 500px){
+	.category-card{
+		width: 25.5vw ; 
+		height: 19vw;
+	}
+	.category-card-name{
+		font-size: 1rem;
+		font-weight: bold;
+	}
+}
+@media (max-width: 410px){
+	.category-card-name{
+		font-size: 0.9rem;
+	}
+}
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	   ENGLISH HINDI       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+
+/*THESE ARE THE PROPERTIES OF BOTH LATEST HINDI AND ENGLISH SECTION*/
+
+#english,#hindi{
+	display: flex;/* DISPLAY IS FLEX IN DIRECTION OF ROW*/
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-around;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+#english>div,#hindi>div{
+	width: 100px;
+	height: 200px;
+	margin-top: 10px;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+#english figure,#hindi figure{
+	/*HEIGHT AND WIDTH OF PARTICULAR FIGURE IS FIXED*/
+	height: 100px;
+	width: 100px ;
+}
+#english img,#hindi img{
+	height: 100%;
+	width: 100%;
+	margin-left: -40%;
+	transition: all 0.2s ease-in-out;
+}
+#english img:hover ,#hindi img:hover{
+	box-shadow: 0 0 20px 2px black;
+	transform: scale(1.1);
+	cursor: pointer;
+}
+#english figcaption,#hindi figcaption{
+	text-align: center;
+}
+.english-date{
+	color:rgb(40,236,104,0.9);
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-family: monospace;
+}
+.english-name{
+	line-height: 1.2rem;
+	color: white;
+	font-size: 14px;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+}
+
+/*####################### ########   MEDIA QUERIES #################################*/
+
+@media (max-width: 1052px){
+	#english figure,#hindi figure{
+		height: 90px;
+		width: 90px ;
+	}
+	#english>div,#hindi>div{
+		margin-top: 10px;
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+}
+@media (max-width: 968px){
+	#english figure,#hindi figure{
+		height: 100px;
+		width: 100px ;
+	}
+	#english>div,#hindi>div{
+		/*margin-top: 10px;*/
+		margin-right: 30px;
+		margin-left: 30px;
+		height: 170px;
+	}
+	#english,#hindi{
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+}
+@media (max-width: 900px){
+	#english figure,#hindi figure{
+		height: 100px;
+		width: 100px ;
+	}
+	#english>div,#hindi>div{
+		margin-top: 10px;
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+}
+@media (max-width: 770px){
+	#english figure,#hindi figure{
+		height: 80px;
+		width: 80px ;
+	}
+	#english>div,#hindi>div{
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+}
+@media (max-width: 699px){
+	#english figure,#hindi figure{
+		height: 80px;
+		width: 80px ;
+	}
+	#english>div,#hindi>div{
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	#english,#hindi{
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+}
+@media (max-width: 500px){
+	#english>div,#hindi>div{
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	#english,#hindi{
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+}
+@media (max-width: 420px){
+	#english>div,#hindi>div{
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+	#english,#hindi{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	   ASIDE SECTION       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+
+
+
+aside{
+	/*OVERFLOW IS SET TO SCROLL  AND SCROLL BAR IS HIODDEN*/
+	overflow: scroll;
+	margin-top:5px;
+	height:90vh;
+	width:25%;
+	/*border:2px solid white;*/
+	vertical-align: top;
+	display: inline-block;
+	position: relative;
+}
+aside::-webkit-scrollbar {
+    display: none;
+}
+#left-arrow-menu{ 
+	/*THIS APPERAS ONLY ON SMALL SCREEN */
+	display: none;
+	font-size: 1.1rem;
+	position: relative;
+	float: right;
+	background-color: red;
+	padding: 2px;
+	margin-top: 15px;
+	border:2px solid white;
+	box-sizing: border-box;
+	border-radius: 20px 0 0 20px;
+}
+#more{
+	color: white ; 
+	font-size:1.2rem;
+	margin-right: 10px;
+}
+#aside-main{
+	/*THIS ISW THE MAIN SECTION OF THE ASIDE SECTION*/
+	display:relative;
+	/*border: 2px solid white ;*/
+	/*top:25px ;*/
+	width:100%;
+}
+
+.name-dropdown{
+	position: relative;
+	top:0px;
+	width: 100%;
+}
+#aside-name{
+	float: left;
+	color: white;
+}
+#dropdown{
+	float: right;
+	color: white;
+	/*margin-top: 22.5px;*/
+	position: absolute;
+	top:22.5px;
+	right:0;
+	/*z-index: 2;*/
+}
+#dropdown-icon {
+	float: right;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: yellow;
+}
+.dropdown-menu{
+	/*THIS IS THE DROPDOWN MENU , HOVERING OVER THE DROPDOWN ARROW MAKES IT VISIBLE*/
+	display: none;
+	position: relative;
+	background-color: cyan;
+	transition: box-shadow 1s ease-in-out;
+	border-radius: 20px;
+	z-index: 1; 
+}
+.dropdown-menu ul{
+	margin: 0;
+	padding: 0;
+	margin-top: 30px;
+	border:4px solid red;
+	border-radius: 20px;
+}
+.dropdown-menu ul li:first-child{
+	padding-top: 10px;
+	border-bottom: none;
+}
+.dropdown-menu ul li{
+	padding:5px 20px 5px 20px;
+	margin-top: 0px;
+	color:blue;
+	font-weight: bold;
+	font-size: 18px;
+}
+.dropdown-menu ul li:hover{
+	cursor: pointer;
+}
+#dropdown:hover .dropdown-menu{
+	display: block;
+	box-shadow: 0 0 20px 2px black;
+	/*background-color: red;*/
+}
+
+#queue-list{
+	width: 100%;
+	/*position: absolute;*/
+	overflow: scroll;
+	height: 500px;
+	/*margin-top: 70px;*/
+}
+
+#queue-list::-webkit-scrollbar {
+    display: none;
+}
+
+ul{
+	margin-left: -10px;
+	padding-left:20px;
+	/*margin-top: 30%;*/
+}
+li{
+	/*border:1px solid white;*/
+	color: white;
+	margin-bottom: 10px;
+	margin-top: 25px;
+}
+li:hover{
+	cursor: pointer;
+}
+.queue-item{
+	position: relative;
+}
+.number{
+	vertical-align: top;
+	margin-top: 23px;
+	font-size: 0.8rem;
+	font-family: sans-serif;
+	color:rgba(120,245,87,0.7);
+	font-weight: bolder;
+}
+#now-playing{
+	color:rgb(228,245,228);
+	margin-top: 15px;
+	font-size: 1.5rem;
+}
+.queue-item-image {
+	height: 50px;
+	width: 50px;
+	margin-left: 10px;
+}
+.queue-item-image img{
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	border-style: none;
+	border-radius:20%;
+	box-shadow: -1px 1px 5px 0.5px white;
+}
+.queue-item-detail{
+	vertical-align: top;
+	margin-top: 12px;
+	margin-left: 5%;
+	font-family: sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.1rem;
+	line-height: 1.2rem;
+}
+.song{
+	color: white;
+	font-weight: lighter;
+	font-size: 17px;
+}
+.singer{
+	color: rgba(233,248,7,0.7);
+	font-size: 13px;
+}
+.add-favourite{
+	position: absolute;
+	right:10px;
+	top:35%;
+	font-size: 1.1rem;
+	transition: font-size 0.2s ease-in-out;
+}
+.add-favourite:hover{
+	color: red;
+	font-size: 1.4rem;
+}
+
+
+/*MEDIA QUERIES FOR CHANGING THE WIDTH OF MAIN AND ASIDE SECTION */
+@media (max-width: 1194px){
+	.song{
+		color: white;
+		font-weight: lighter;
+		font-size: 14px;
+	}
+
+}
+@media (max-width: 1072px){
+	aside{
+		width:26%;
+	}
+	main{
+		margin:5px;
+	}
+	ul{
+		padding-left: 10px;
+	}
+}
+
+@media (max-width: 900px){
+	aside{
+		position: absolute;
+		top:60px; 
+		right: 0 ; 
+		z-index: 3;
+		height: auto;
+		width: 250px;
+	}
+	#aside-main{
+		display:none;
+		background-image: rgb(15,6,101);
+		margin-top: 55px;
+	}
+	main{
+		width:100%;
+		padding-top: 20px;
+		margin-left: 0!important;
+		margin-right: 0!important;
+	}
+	#left-arrow-menu{
+		display: initial;
+	}
+	aside:hover #aside-main{
+		cursor:pointer;
+		display: block;
+		background-color: rgb(15,6,101);
+	}
+	ul{
+		margin-left: 10px;
+	}
+	.queue-item-detail{
+		margin-top: 8px;
+		margin-left: 5px;
+		font-family: sans-serif;
+		font-size: 0.9rem;
+		letter-spacing: 0.1rem;
+		line-height: 1.2rem;
+	}
+	.song{
+		color: white;
+		font-weight: lighter;
+		font-size: 13px;
+	}
+	.singer{
+		color: rgba(233,248,7,0.7);
+		font-size: 11px;
+	}
+	#aside-name{
+		margin-left: 10px;
+		font-size: 14px;
+	}
+	#dropdown-icon {
+		margin-right: 10px;
+		font-size: 14px;
+	}
+}
+@media (max-width: 400px){
+	aside{
+		width: 225px;
+	}
+	ul{
+		margin-left: 5px;
+	}
+	.queue-item-image {
+		height: 40px;
+		width: 40px;
+		margin-top: 5px;
+	}
+	
+}
+
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	  FOOTER SECTION       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+
+footer{
+	height: 70px;
+	background-image: linear-gradient( rgb(4,40,85) ,  rgba(12,133,52,0.6));
+	background-color: rgb(4,40,85);
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: space-around;
+	z-index: 6;
+}
+footer div{
+	display: inline-block;
+}
+#current-song{
+	position: absolute ; 
+	left: 20px;
+	bottom: 5px;
+}
+#current-song-image{
+	height: 50px;
+	width: 50px;
+}
+#current-song-image img{
+	height:100%;
+	width: 100%;
+	border-radius: 50%;
+	box-shadow: 0 0 50px 2px blue;
+}
+#current-song-detail{
+	margin-top: 10px;
+	vertical-align: top;
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.1rem;
+	margin-left: 5px;
+}
+footer .singer{
+	color:rgba(163,163,238,0.6);
+}
+#current-song-fn{
+	margin-top: 10px;
+	vertical-align: top;
+	color: white ; 
+	font-size: 1.2rem;
+	margin-left: 10px;
+	opacity: 0.6;
+}
+.fa-heart:hover {
+	/*font-size: 2rem ;*/ 
+	color:red;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+.fa-ban:hover {
+	/*font-size: 2rem ;*/ 
+	color:black;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+.horizontal-list{
+	margin: 0;
+	padding: 0;
+	padding-top: 25px;
+}
+.horizontal-list li{
+	display: inline-block;
+	font-size: 1.2rem;
+	text-align: center;
+}
+/*THIS IS THE PROGRESS SECTION OR THE MID SECTION OF THE FOOTER
+ITS DISPLAY IS FLEX WITH DIRECTION COLUMN 
+IT HAS TWO SECTION 
+1. ICONS
+2. RANGE SLIDER*/
+#progress{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 20px;
+}
+#progress-icons .horizontal-list li{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 30px;
+	font-weight: lighter;
+	opacity: 0.5;
+}
+#progress-icons .horizontal-list li:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+#play-pause{
+	font-size: 1.4rem;
+	font-weight: bold;
+	opacity: 1 !important;
+}
+#progress-bar{
+	margin-top: -8px;
+}
+#progress-bar input{
+	width: 400px;
+}
+input[type="range"]{
+	height: 5px;
+	opacity:1 !important;
+}
+#running-time,#total-time{
+	font-family: sans-serif;
+	font-size: 14px;
+	color:white ; 
+	opacity: 0.8;
+}
+#total-time{
+	opacity: 1;
+	font-size: 15px;
+}
+#volume{
+	position: absolute;
+	right: 10px;
+	bottom:13px;
+}
+#volume li{
+	margin-left: 3px;
+	margin-right: 3px;
+	opacity: 0.7 ; 
+	font-size: 16px;
+}
+#volume li:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+#volume-range{
+	opacity: 1 !important;
+}
+#expand{
+	/*THIS IS EXPAND ICON , VISIBLE ON ONLY SMALL SCREENS*/
+	position: absolute;
+	right: 25px ; 
+	bottom: 35px;
+	display: none;
+	height: 10px;
+	width: 10px;
+	color: white;
+	font-size: 1.4rem;
+
+}
+
+/*###############   MEDIA QUERIES #####################*/
+
+@media (max-width: 1000px){
+	#progress-bar input{
+		width: 300px;
+	}
+}
+
+@media (max-width: 880px){
+	#volume-range{
+		display: none;
+	}
+	#current-song-image{
+		height: 40px;
+		width: 40px;
+		margin-top: 5px;
+	}
+	#current-song-detail{
+		margin-top: 5px;
+	}		
+}
+
+@media (max-width: 770px){
+	#current-song-fn{
+		display: none;
+	}
+	#current-song-detail{
+		margin-top: 10px;
+	}	
+	#current-song{
+		bottom: 15px;
+	}	
+	#progress-bar input{
+		width: 250px;
+	}
+	#progress-icons .horizontal-list li{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media (max-width: 600px){
+	#current-song-image{
+		display: none;
+	}
+	#current-song{
+		left: 2px;
+	}	
+}
+@media (max-width: 550px){
+	#progress-icons .horizontal-list li{
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	#progress-bar input{
+		width: 200px;
+	}
+}
+@media (max-width: 493px){
+	#current-song-image{
+		display: block;
+	}
+	#current-song-detail{
+		display: none;
+	}
+	#current-song{
+		left: 10px;
+	}	
+	#progress-bar input{
+		width: 150px;
+	}
+}
+@media (max-width: 427px){
+	#volume{
+		display: none;
+	}
+	#expand{
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

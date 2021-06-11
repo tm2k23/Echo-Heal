@@ -1,0 +1,1190 @@
+
+
+
+/*THIS IS BODY PROPERTIES*/
+body{
+	margin: 0;
+
+	background-image:
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+    url('media/bg2.jpg');
+
+	position: fixed; /* i have made the page fixed , i.e. u can't scroll the page */
+	width: 100%;
+	font-family: "Segoe UI", Arial, sans-serif;
+}
+
+p{
+	/*USED TO SET THE MARGIN AND PADDING OF BORDERS AS ZERO*/
+	margin:0px;
+	padding: 0px;
+}
+
+/*hided the scrollbar at the right of the browser*/
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*this is a common class used to set the display to inline block*/
+.display-ib{
+	display: inline-block;
+}
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	 ANIMATION KEYFRAMES   **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+@keyframes zoom-in-zoom-out{
+	/*zooms in and zooms out the content*/
+	from{
+		transform:scale(1);
+	}
+	to{
+		transform:scale(1.1);
+	}
+}
+@keyframes ring{
+	/*used to ring and vibrate the notification bell  icon*/
+	from{
+		transform: rotate(-20deg);
+	}
+	to{
+		transform: rotate(20deg);
+	}
+}
+@keyframes rotating{
+	/*used to constantly keep rotating the logo of the website at top left corner*/
+	from{
+		transform: rotate(-360deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}
+@keyframes hover-shadow-change{
+	/*used to change the shadow on hover*/
+	from{
+		background-color: rgba(203,187,187,0.5);
+	}
+	to{
+		background-color: rgba(203,187,187,0.4);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	    TOP NAV BAR        **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+/*top nav bar section */
+nav{
+	height: 50px;
+	width: 100%;
+	background-image: linear-gradient(black , transparent);
+	padding-top:10px;
+	display: flex; 
+	position: relative;
+}
+
+/*logo image div*/
+#logo{
+	margin-left: 10px;
+}
+
+/*logo image*/
+#logo img{
+	height: 60px;
+	width: 60px;
+	animation: rotating 3s linear infinite ; /* the image always keeps rotating*/
+}
+
+/*player name just after the logo*/
+#player-name{
+	color: white;
+	font-family: sans-serif;
+	font-size: 1rem;
+	margin-top: 6px;
+	line-height: 23px;
+	letter-spacing: 1px;
+}
+
+/*this is the property of heart shaped icon which is visible only at small pixel devices
+i.e. Favourite word is substituted by heart icon*/
+#favourite-icon{
+	color: red;
+	margin-left: 4%;
+	/*margin-top: -px;*/
+	font-size: 2.5rem;
+	animation: zoom-in-zoom-out 1s ease-in-out infinite alternate; /*zoom-in zoom-out effect*/
+	display: none;/* initially i.e. at large pixel device display is none*/
+}
+
+/*favourite word at the top */
+#favourite{
+	color: white;
+	margin-left: 12%;
+	font-family: sans-serif;
+	margin-top: 20px;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	font-weight: bold;
+	animation: zoom-in-zoom-out 1s ease-in-out infinite alternate;/* it always zooms in zooms out*/
+}
+
+/*this is the property of searchbox div*/
+#search{
+	background-color: white;
+	padding: 15px;
+	padding-top: 6px;
+	border-radius: 20px;
+	height: 15px;
+	margin-top: 10px;
+	margin-left: 25%;
+	width: 20%;
+	position: absolute;
+	right: 250px;
+}
+#music{
+	margin-left: 5px;  /*left icon in the search box , it disappears on small scale devices*/
+}
+#search input{/* PROPERTY OF INPUT BOX IN SEARCH BOX*/
+	margin-left: 10px;
+	border-style: none;
+	width:60%;
+}
+input:focus{
+	outline: none; /*FOR REMOVING THE BORDERS OF INPUT BOX WHEN USER TYPES*/
+}
+#microphone{ /*PROPERTIES OF MICROPHONE ON THE RIGHT OF THE SEARCH BOX*/
+	float: right;
+	margin-right: 5px;
+	color: red;
+}
+#notification{ /*PROPERTIES OF NOTIFICATION BELL */
+	position: absolute;
+	right: 150px;
+	color: yellow ; 
+	font-size: 1.7rem;
+	margin-top: 10px;
+	animation: ring 0.1s linear 2s alternate 100;/* USED TO VIBRATE IT */
+}
+#user{ /*PROPERTIES OF DIV OF USER IMAGE*/
+	position: absolute;
+	right: 30px;
+	height: 50px; /*HAVE FIXED ITS HEIGHT AND WIDTH TO 50 PX*/
+	width: 50px;
+}
+#user img{/* PROPERTIES OF IMAGE INSIDE THE DIV OF USER */
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+}
+
+/************************ MEDIA QUERIES **************************/
+@media (max-width: 750px){
+	#favourite{
+		display: none; /*FAVOURITE WORD DISPPEARS AT 750 PX BECAUSE OF LESS SPACE*/
+	}
+	#favourite-icon{/* IN PLACE OF THE WORD A HEART ICON COMES*/
+		display: initial;
+		font-size: 1.7rem;
+		margin-top: 10px;
+	}
+	#notification{
+		right:110px;
+	}
+	#search{
+		right: 175px;
+		width:30%;
+		height: 15px;
+	}
+}
+@media (max-width: 650px){
+	
+	#search{
+		right: 150px;
+		width:30%;
+		height: 15px;
+	}
+	#music{ /*DUE TO LESS SPACE i HAVE RMOVED MUSIC SYMBOL IN THE LEFT OF SEARCH BOX*/
+		display: none;
+	}
+	#notification , #favourite-icon {
+		font-size: 1.5rem;
+		margin-top: 14px;
+	}
+	#logo img , #user{
+		height: 50px ; 
+		width: 50px;
+		margin-top: 3px;
+	}
+	#player-name{
+		font-size: 0.9rem;
+		line-height: 15px;
+		margin-top: 13px;
+	}
+}
+@media (max-width: 550px){
+	#search{
+		right: 150px;
+		width:30%;
+		height: 15px;
+	}
+	#notification , #favourite-icon {
+		font-size: 1.5rem;
+		margin-top: 13px;
+	}
+	#logo img , #user{
+		height: 40px ; 
+		width: 40px;
+		margin-top: 6px;
+	}
+	#player-name{
+		font-size: 0.9rem;
+		line-height: 15px;
+		margin-top: 13px;
+	}
+}
+@media (max-width: 470px){
+	#notification{
+		right:70px;
+	}
+	#search{
+		right: 100px;
+		width:30%;
+		height: 15px;
+	}
+	#user{
+		right: 20px;
+	}
+}
+@media (max-width: 400px){
+	#favourite-icon{
+		display: none;
+	}
+	#user{
+		right: 10px;
+	}
+	#notification{
+		right: 60px;
+	}
+}
+
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	    MAIN SECTION       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+main{
+	overflow: scroll; /*HAS SET THE OVERFLOW TO SCROLL*/
+	margin-left:30px;
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 80vh;
+	width:68%;
+	display: inline-block; /*INLINE BLOCK BECAUSE i WANT TO PLACE ASIDE SECTION ALSO INLINE TO THIS MAIN*/
+}
+main::-webkit-scrollbar {
+  	display: none;/* USED TO HIDE THE SCROLLBAR*/
+}
+#about{
+	 background-image:
+    linear-gradient(to bottom,rgba(7,191,41,0.2), rgba(20,27,65,0.8),rgba(20,27,65,0.8)),
+    url('media/bg.jpg');
+    /*BACKGROUND CONTAINS THREE COLORS IN GRADIENT AND A IMAGE  */
+	background-size: cover;
+	height: auto;
+	display: flex;/* INITIALLY THE DIRECTION IS ROW WHICH WILL BE CHANGED LATER TO COLUMN ON SMALL SCREEN*/
+	align-content: center;
+	align-items: center;
+}
+#artist-image{
+	height: 20vw;/* MADE THE HEIGHT AND WIDTH RESPONSIVE*/
+	width:20vw;
+	background-image: linear-gradient(transparent,yellow 250%) ,  url(media/artist-image.jpg) ;
+	background-size: contain;
+	min-height: 215px;/* SET THE MIN WIDTH AND HEIGHT TO AVOID SHRINKING*/
+	min-width: 215px;
+}
+#about:hover #artist-image{
+	background-image: linear-gradient(transparent,red 180%) ,  url(media/artist-image.jpg) ;
+}
+
+#artist-detail{
+	width:67%; 
+	margin:auto;
+	margin-left: 15px;
+	margin-right: 10px;
+	flex-grow: 1;
+}
+#artist-name-followers{
+	position: relative;
+}
+#artist-name{
+	color:white;
+	font-weight: 600;
+	font-size: 2rem;
+}
+#followers{
+	color:cyan;
+	position: absolute;
+	right: 0;
+	top:40%;
+	font-size: 1.1rem;
+}
+#band-name,#artist-description{
+	color:cyan;
+	font-size:15px;
+}
+#band-name{
+	margin-top: 0px;
+}
+#artist-description{
+	margin-top:5px;
+	text-align:justify;
+}
+button{
+	margin-top: 5px;
+}
+#play-all{
+	background-image: linear-gradient(-45deg,rgb(161,122,234),rgb(252,3,85));
+	/*HAS TWO COLORS AS GRADIENT*/
+	border:none;
+	font-size: 1rem;
+	color: white;
+	padding: 6px;
+	width:150px;
+	border-radius: 5px;
+}
+#play-all:hover{
+	background-image: linear-gradient(-45deg,rgb(252,3,85),rgb(161,122,234));
+	/*COLORS OF GRADIENT ARE CHANGED ON HOVER*/
+	transition: all 0.2s ease-in-out;
+	transform: scale(1.02);
+	cursor: pointer;
+	border-radius: 10px;
+}
+#follow{
+	margin-left: 70px;
+	color:yellow;
+	background-color: transparent;
+	font-size: 1rem;
+	border-style: none;/* REMOVED THE BORDOR OF THE BUTTON*/
+}
+#follow:hover{
+	transform: scale(1.05);
+	cursor: pointer;
+}
+#tracks-albums{
+	color: white;
+	font-size: 12px;
+}
+
+@media (max-width: 1135px){
+	#artist-name{
+		font-size: 2rem;
+	}
+	#artist-detail{
+		margin-top:10px!important;
+	}
+	#band-name,#artist-description{
+		font-size:14px;
+	}
+	#artist-detail{
+		margin-left: 15px;
+	}
+	main{
+		margin-left:30px;
+	}
+}
+
+@media (max-width: 980px){
+	#artist-name{
+		font-size: 1.7rem;
+	}
+	#band-name,#artist-description{
+		font-size:14px;
+	}
+	main{
+		margin-left:10px;
+		width:71%;
+	}
+}
+@media (max-width: 925px){
+	main{
+		margin-left:10px;
+		width:71%;
+	}
+}
+
+@media (max-width: 900px){
+	main{
+		width:auto;
+		margin-left: 60px;
+		margin-right: 60px;
+		margin-top: 20px;
+	}
+}
+@media (max-width: 735px){
+	main{
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+}
+@media (max-width: 692px){
+	#artist-detail{
+		margin-top: 5px!important;
+	}
+	main{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media (max-width: 580px){
+
+/*AT 580 PX THERE ARE SOME MAJOR CHANGES HAPPEING 
+
+FLEX DIRECTION IS CHANGED TO COLUMN BECAUSE SPACE WAS LESS
+WIDTH OF ARTIST DETAIL IS SET TO AUTO*/
+
+
+	#about{
+		flex-direction: column;
+	}
+	main{
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	#artist-detail{
+		width:auto;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	#artist-image{
+		height:150px!important;
+		width: 150px!important;
+		border-radius: 50%;
+		margin-top: 20px;
+		margin-bottom: -30px;
+		min-height: 150px;
+		min-width: 150px;
+	}
+	#artist-image img{
+		height: 100%;
+		width:100%;
+	}
+	main{
+		margin-top: 10px;
+	}
+}
+@media (max-width: 400px){
+	#artist-image{
+		margin-bottom: 0px;
+	}
+	#follow{
+		margin-left: 30px;
+	}
+	#play-all{
+		width: 100px;
+	}
+}
+************************************************************************************
+                                      SONGS
+************************************************************************************
+#songs{
+	display: flex;
+	flex-direction: column;
+}
+
+.song-card{
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: rgba(2,11,39,0.9);
+	color: white;
+	margin-top: 10px;
+}
+.song-card:hover{
+	background-color: rgba(2,11,39,0.6);
+	cursor: pointer;
+}
+.left{
+	width:300px ; 
+	display: flex;
+	align-items: center;
+}
+.song-number{
+	margin-left: 20px;
+	margin-right: 20px;
+	color: #25c5c5;
+}
+.fa-volume-up{
+	color: white;
+}
+.song-image{
+	height:50px;
+	width: 65px;
+	margin: 5px;
+	margin-right: 30px;
+	box-shadow: 0 0 20px 1px blue;
+}
+.song-image img{
+	width: 100%;
+	height: 100%;
+}
+.song-name{
+	font-size: 1rem;
+}
+.song-artist{
+	color: #25c5c5;
+	font-size: 0.9rem;
+}
+.mid{
+	position: absolute;
+	left:55%;
+	color: #25c5c5;
+}
+.right{
+	position: absolute;
+	color: #25c5c5;
+	right: 0;
+	word-spacing: 20px;
+	margin-right: 30px;
+	font-size: 1.2rem;
+}
+
+/******************** MNEDIA QUERIES *******************/
+
+@media (max-width:1300px)
+{
+	.song-image{
+		height:45px;
+		width: 50px;
+	}
+	.song-name{
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 400px){
+	.song-image{
+		margin-right: 10px;
+		width: 40px;
+	}
+	.number{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	   ASIDE SECTION       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+
+aside{
+	margin-top:5px;
+	height:86vh;
+	margin-left: 30px;
+	width:23%;
+	vertical-align: top;
+	display: inline-block;
+	position: relative;
+}
+#left-arrow-menu{
+
+	/*THIS IS THE PROPERTY OF UPER LEFT ARROW VISIBLE ON SMALL SCREEN*/
+
+	display: none;/* INITIALLY IS DIASPLAY IN NNONE ON SMALL SCREEN*/
+	font-size: 1.1rem;
+	position: relative;
+	float: right;
+	background-color: red;
+	padding: 2px;
+	margin-top: 8px;
+	border:2px solid white;
+	box-sizing: border-box;
+	border-radius: 20px 0 0 20px;
+}
+
+#more{
+	color: white ; 
+	font-size:1.2rem;
+	margin-right: 10px;
+}
+#similar-artists-list,#recently-played-list{
+	height: 35vh;
+	overflow: scroll; /*HAS SET THE OVERFLOW TO SCROLL IN TWO SUBSECTION OF ASIDE SECTION*/
+}
+
+
+/*HIDDEN THEW SCROLLBAR*/
+#similar-artists-list::-webkit-scrollbar {
+    display: none;
+}
+#recently-played-list::-webkit-scrollbar {
+    display: none;
+}
+.heading-view-all{
+	position: static;/* HAS SET HE POSITION TO STATIC SO THAT IT WONT MOVE ON SCROLLING ITS CONTENT*/
+	margin-bottom: 5px;
+}
+.heading{
+	color:white;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+.view-all{
+	float: right;
+	color: white;
+	margin-top: 5px;
+	margin-right: 10px;
+	font-size: 14px;
+}
+
+/*########################################################################################
+*******************************     similar	 artist    ************************************
+##########################################################################################*/
+
+
+.artist-card{
+
+	/*THIS IS THE PROPERTY OF CARDS OF THE SIMILAR ARTISTS*/
+
+	display: flex ; 
+	margin-top: 10px;
+	color: white;
+	position: relative;
+	width: 100%;
+	height:70px;
+	background-color: rgba(63,42,106,0.4);
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.hover-play{
+	height: 100%;
+	width: 100%;
+	display: none;
+	position: absolute;
+	border-radius: 5px;
+	background-color: rgba(195,223,198,0.6);
+	animation: hover-shadow-change 4s ease-in-out infinite alternate;
+	transition: box-shadow 2s ease-in-out;
+}
+.hover-play-button{
+	position: absolute;
+	font-size: 1.6rem;
+	top:18px;
+	left:27px;
+	color: black;
+	animation: zoom-in-zoom-out 0.3s ease-in-out infinite alternate;
+	/*THIS ANIMATION ZOOMS IN AND OUT THE PLAY BUTTON*/
+}
+
+.artist-card:hover .hover-play{
+	display: initial;
+	box-shadow: 0 0 10px 1px black ;
+}
+.hover-play-button{
+	cursor: pointer;
+}
+.artist-card img{
+	height: 70px; 
+	width: 70px;
+	border-radius: 5px;
+}
+.name-band{
+	margin-left: 15px;
+	margin-top: 15px;
+	line-height: 1.2rem;
+	color: white;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+	font-size: 13px;
+}
+.artist-band{
+	color:rgb(40,236,104,0.9);
+	font-size: 11px;
+	letter-spacing: 1px;
+	font-family: monospace;
+}
+.option{
+	position: absolute;
+	top:10px;
+	right: 20px;
+	line-height: 1.5rem;
+	z-index: 1;
+}
+.artist-dropdown-icon { /*this is the property of three dot for mnenu*/
+	float: right;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: yellow;
+}
+.artist-dropdown-icon:hover{
+	cursor: pointer;
+}
+.artist-dropdown-menu{/* this is the menu ... initially its display is none*/
+	display: none;
+	margin-right: 16px;
+	background-color: cyan;
+	transition: box-shadow 2s ease-in-out;
+	border-radius: 20px;
+}
+.artist-dropdown-menu ul{
+	margin: 0;
+	padding: 0;
+	border:4px solid red;
+	margin-top: 20px;
+	border-radius: 20px;
+}
+.artist-dropdown-menu ul li{
+	padding:0px 5px 0px 5px;
+	margin-top: 0px;
+	color:blue;
+	font-weight: bold;
+	font-size: 14px;
+}
+.artist-dropdown-menu ul li:hover{
+	cursor: pointer;
+}
+
+.artist-dropdown-menu ul li:first-child{
+	padding-top: 10px;
+	border-bottom: none;
+}
+.option:hover .artist-dropdown-menu{ /*hovering over the three dot will display the menu*/
+	display: block;
+	box-shadow: 0 0 20px 4px black;
+}
+.time{
+	position: absolute;
+	right: 20px;
+	top:30px;
+	line-height: 1.5rem;
+	font-size: 12px;
+}
+
+
+
+
+/*###############################  RECENTLY PLAYED #####################################*/
+
+#recently-played{
+	margin-top: 10px;
+}
+#recently-played-list{/* OVER FLOW IS SCROLL AND SCROLL BAR IS HIDDEN*/
+	width: 100%;
+	overflow: scroll;
+	height: 40vh;
+}
+
+#recently-played-list::-webkit-scrollbar {
+    display: none;
+}
+
+ul{
+	margin-left: -10px;
+	padding-left:10px;
+}
+li{
+	color: white;
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+li:hover{
+	cursor: pointer;
+}
+.recently-played-item{
+	position: relative;
+}
+.number{
+	vertical-align: top;
+	margin-top: 13px;
+	font-size: 0.8rem;
+	font-family: sans-serif;
+	color:rgba(120,245,87,0.7);
+	font-weight: bolder;
+}
+#now-playing{
+	color:rgb(228,245,228);
+	margin-top: 8px;
+	font-size: 1.5rem;
+}
+.recently-played-item-image {
+	height: 40px;
+	width: 40px;
+	margin-left: 10px;
+}
+.recently-played-item-image img{
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	border-style: none;
+	border-radius:20%;
+	box-shadow: -1px 1px 5px 0.5px white;
+}
+.recently-played-item-detail{
+	vertical-align: top;
+	margin-top: 3px;
+	margin-left: 2%;
+	font-family: sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.05rem;
+	line-height: 1rem;
+}
+.song{
+	color: white;
+	font-weight: lighter;
+	font-size: 14px;
+}
+.singer{
+	color: rgba(233,248,7,0.7);
+	font-size: 12px;
+}
+.add-favourite{
+	position: absolute;
+	right:10px;
+	top:15%;
+	font-size: 1.1rem;
+	transition: font-size 0.2s ease-in-out;
+}
+.add-favourite:hover{
+	color: red;
+	font-size: 1.4rem;
+}
+
+/****************MEDIA QUERIES ***********************/
+
+@media (max-width: 1040px){
+	aside{
+		margin-left: 5px;
+		width:25%;
+	}
+	.name-band{
+		margin-left: 5px;
+	}
+}
+
+
+@media (max-width: 900px){
+	aside{
+		position: absolute;
+		top:50px; 
+		right: 0 ; 
+		z-index: 3;
+		height: auto;
+		width:225px;
+	}
+	#aside-main{
+		display:none;
+		margin-top: 50px;
+		border-radius: 10px;
+		box-shadow: -1px 0 15px 5px black; 
+	}
+	#left-arrow-menu{
+		display: initial;
+	}
+	aside:hover #aside-main{
+		cursor:pointer;
+		display: block;
+		background-color: rgb(146 126 209);
+	}
+	.heading{
+		margin-left: 10px;
+		color: black;
+	}
+	.view-all{
+		margin-right: 10px;
+	}
+	.recently-played-item-image {
+		height: 40px;
+		width: 40px;
+		margin-left: 5px;
+	}
+	ul{
+		margin-left: 0px;
+		padding-left:10px;
+	}
+}
+@media (max-width: 580px){
+	#left-arrow-menu{
+		margin-top: 13px;
+	}
+}
+
+
+
+/*******************************************************************************************
+*********************************************************************************************
+****************************                           **************************************
+****************************  	  FOOTER SECTION       **************************************
+****************************                           **************************************
+*********************************************************************************************
+********************************************************************************************/
+
+
+/*THIS IS SAME AS THAT ON MAIN PAGE SO THE COMMENT IS AVOIDED*/
+
+
+footer{
+	height: 70px;
+	background-image: linear-gradient( rgb(4,40,85) ,  rgba(12,133,52,0.6));
+	background-color: rgb(4,40,85);
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: space-around;
+	z-index: 6;
+}
+footer div{
+	display: inline-block;
+}
+#current-song{
+	position: absolute ; 
+	left: 20px;
+	bottom: 5px;
+}
+#current-song-image{
+	height: 50px;
+	width: 50px;
+}
+#current-song-image img{
+	height:100%;
+	width: 100%;
+	border-radius: 50%;
+	box-shadow: 0 0 50px 2px blue;
+}
+#current-song-detail{
+	margin-top: 10px;
+	vertical-align: top;
+	font-size: 1rem;
+	font-family: sans-serif;
+	letter-spacing: 0.1rem;
+	margin-left: 5px;
+}
+footer .singer{
+	color:rgba(163,163,238,0.6);
+}
+#current-song-fn{
+	margin-top: 10px;
+	vertical-align: top;
+	color: white ; 
+	font-size: 1.2rem;
+	margin-left: 10px;
+	opacity: 0.6;
+}
+.fa-heart:hover {
+	/*font-size: 2rem ;*/ 
+	color:red;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+.fa-ban:hover {
+	/*font-size: 2rem ;*/ 
+	color:black;
+	transition: all 0.5s ease-in-out;
+	cursor: pointer;
+}
+.horizontal-list{
+	margin: 0;
+	padding: 0;
+	padding-top: 25px;
+}
+.horizontal-list li{
+	display: inline-block;
+	font-size: 1.2rem;
+	text-align: center;
+}
+#progress{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 20px;
+}
+#progress-icons .horizontal-list li{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 30px;
+	font-weight: lighter;
+	opacity: 0.5;
+}
+#progress-icons .horizontal-list li:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+#play-pause{
+	font-size: 1.4rem;
+	font-weight: bold;
+	opacity: 1 !important;
+}
+#progress-bar{
+	margin-top: -10px;
+}
+#progress-bar input{
+	width: 400px;
+}
+input[type="range"]{
+	height: 5px;
+	opacity:1 !important;
+}
+#running-time,#total-time{
+	font-family: sans-serif;
+	font-size: 14px;
+	color:white ; 
+	opacity: 0.8;
+}
+#total-time{
+	opacity: 1;
+	font-size: 15px;
+}
+#volume{
+	position: absolute;
+	right: 10px;
+	bottom:13px;
+}
+#volume li{
+	margin-left: 3px;
+	margin-right: 3px;
+	opacity: 0.7 ; 
+	font-size: 16px;
+}
+#volume li:hover{
+	opacity: 1;
+	cursor: pointer;
+}
+#volume-range{
+	opacity: 1 !important;
+}
+#expand{
+	position: absolute;
+	right: 25px ; 
+	bottom: 35px;
+	display: none;
+	height: 10px;
+	width: 10px;
+	color: white;
+	font-size: 1.4rem;
+
+}
+
+
+@media (max-width: 1000px){
+	#progress-bar input{
+		width: 300px;
+	}
+}
+
+@media (max-width: 880px){
+	#volume-range{
+		display: none;
+	}
+	#current-song-image{
+		height: 40px;
+		width: 40px;
+		margin-top: 5px;
+	}
+	#current-song-detail{
+		margin-top: 5px;
+	}		
+}
+
+@media (max-width: 770px){
+	#current-song-fn{
+		display: none;
+	}
+	#current-song-detail{
+		margin-top: 10px;
+	}	
+	#current-song{
+		bottom: 15px;
+	}	
+	#progress-bar input{
+		width: 250px;
+	}
+	#progress-icons .horizontal-list li{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media (max-width: 600px){
+	#current-song-image{
+		display: none;
+	}
+	#current-song{
+		left: 2px;
+	}	
+}
+@media (max-width: 550px){
+	#progress-icons .horizontal-list li{
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	#progress-bar input{
+		width: 200px;
+	}
+}
+@media (max-width: 493px){
+	#current-song-image{
+		display: block;
+	}
+	#current-song-detail{
+		display: none;
+	}
+	#current-song{
+		left: 10px;
+	}	
+	#progress-bar input{
+		width: 150px;
+	}
+}
+@media (max-width: 427px){
+	#volume{
+		display: none;
+	}
+	#expand{
+		display: block;
+	}
+}
+

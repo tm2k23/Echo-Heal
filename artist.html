@@ -1,0 +1,747 @@
+<!-- THIS IS THE PAGE OF PARTICULAR ARTIST  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- TITLE OF THE ARTIST PAGE -->
+	<title>Artist Page</title>
+
+	<!-- This is viewport meta data -->
+	<meta charset="utf-8" name="viewport" content="initial-scale=1 , width=device-width">
+
+	<!-- Font Awesome Icons Are used completely offline -->
+	<link href="fontawesome/css/all.css" rel="stylesheet">
+	<script defer src="fontawesome/js/all.js"></script>
+	<link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+  	<link href="fontawesome/css/brands.css" rel="stylesheet">
+  	<link href="fontawesome/css/solid.css" rel="stylesheet">
+  	<script defer src="fontawesome/js/brands.js"></script>
+  	<script defer src="fontawesome/js/solid.js"></script>
+  	<script defer src="fontawesome/js/fontawesome.js"></script>
+
+  	<!-- Stylesheet of this page -->
+	<link rel="stylesheet" type="text/css" href="artist-style.css">
+
+	<!-- this adds shortcut icon to the webpage -->
+	<link rel="icon" type="image/x-icon" href="media/artist-image.jpg">
+
+	<!-- Font awesome online files are also included for the cases when icons are not available offline -->
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/artists/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+	<!-- *******************************************************************************************
+		*********************************************************************************************
+		****************************                           **************************************
+		****************************        TOP NAV BAR        **************************************
+		****************************                           **************************************
+		*********************************************************************************************
+		******************************************************************************************** 
+	-->
+	<!-- This section makes the top part of the webpage -->
+	<nav >
+		<div id="logo"><a href="index.html"><img src="media/logo.png"></a></div>
+		<div id="player-name">Echo<br><b>Heal</b></div>
+		<div id="favourite-icon"><i class="fas fa-heart"></i></div>
+		<div id="favourite">Favourite</div>
+		<!-- this div makes the search box -->
+		<div id="search">
+			<span id="music"><i class="fas fa-music"></i></span>
+			<input type="text" name="search-query" placeholder="Search">
+			<span id="microphone"><i class="fas fa-microphone"></i></span>
+		</div>
+		<div id="notification"><i class="fas fa-bell"></i></div>
+		<div id="user"><img src="media/profile.jpg"></div>
+	</nav>
+
+
+
+	<!-- *******************************************************************************************
+		*********************************************************************************************
+		****************************                           **************************************
+		****************************        MAIN SECTION       **************************************
+		****************************                           **************************************
+		*********************************************************************************************
+		********************************************************************************************
+	-->
+	<!-- THIS IS THE MAIN SECTION OF THE WEBPAGE AND CONTAINS TWO SUB SECTIONS
+	1. ABOUT THE ARTIST
+	2. SONGS OF THE ARTIST -->
+	<main>
+
+		<section id="about">
+			<!-- THIS SECTIONS DESCRIBES ABOUT THE ARTIST AND CONTAINS 
+			1. ITS IMAGE
+			2. DETAIL -->
+
+			<div class="display-ib" id="artist-image">
+				<!-- <img src="media/artist-image.jpg"> -->
+				<!-- THIS IS THE IMAGE OF THE ARTIST , IMAGE IS ADDED AS THE BACKGROUND IN THE CSS FILE -->
+			</div>
+
+			<div class="display-ib" id="artist-detail">
+				<!-- THIS IS THE ARTIST DETAIL SECTION -->
+				<div id="artist-name-followers">
+					<span id="artist-name"> ColdPlay </span> <!--  NAME OF THE ARTIST -->
+					<span id="followers"> 851 Followers </span><!--  FOLLOWERS OF THE ARTIST  -->
+				</div>
+				<div id="description">
+					<p id="band-name">British Band</p> <!-- BAND OF THE ARTIST -->
+					<p id="artist-description">
+						<!-- DESCRIPTION -->
+						Coldplay is a Britrish Music band that has enjoyed continous success since their inception in 1996 through their inttelligent and soulful songs . The Band members are Chris Martin, Jonny Buckland, Guy Berryman and Will Champion
+					</p>
+				</div>
+				<div id="bottons">
+					<!-- PLAY ALL AND FOLLOW BUTTONS -->
+					<button id="play-all">Play All</button>
+					<button id="follow">Follow <i class="fas fa-plus"></i></button>
+				</div>
+				<p id="tracks-albums">247 Tracks | 128 Albums</p><!--  TRACKS AND ALBUMS -->
+			</div>
+		</section>
+
+		<section id="songs">
+			<!-- THIS SECTION MAKES THE STRUCTURE OF SONGS OF THE ARTIST -->
+		<!-- 	EACH SONG IS DESCRIBED IN FORM OF A CARD
+			AND EACH CARD CONTAINS THREE PARTS
+			1. LEFT PART ( NUMBERING , IMAGE , NAME)
+			2. MIDDLE PART (TIMING)
+			3. RIGHT PART (HEART AND ADD ICON) -->
+			<div class="song-card">
+				<!-- THIS IS CARD 1 -->
+				<div class="left">
+					<!-- THIS IS THE LEFT PART OF CARD -->
+					<div class="song-number"> 01 </div>
+					<div class="song-image"><img src="media/artist-songs/1.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					<!-- THIS IS MID PART -->
+					4:44
+				</div>
+				<div class="right">
+					<!-- THIS IS RIGHT PART -->
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<!-- CARD 2 -->
+				<div class="left">
+					<div class="song-number"><i class="fas fa-volume-up"></i></div>
+					<div class="song-image"><img src="media/artist-songs/2.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Roar</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<!-- CARD 3 -->
+				<div class="left">
+					<div class="song-number"> 03 </div>
+					<div class="song-image"><img src="media/artist-songs/3.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">I'll Wait</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number"> 04 </div>
+					<div class="song-image"><img src="media/artist-songs/4.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number"> 05 </div>
+					<div class="song-image"><img src="media/artist-songs/5.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number"> 06 </div>
+					<div class="song-image"><img src="media/artist-songs/1.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number">07</div>
+					<div class="song-image"><img src="media/artist-songs/2.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number"> 08 </div>
+					<div class="song-image"><img src="media/artist-songs/3.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number"> 09 </div>
+					<div class="song-image"><img src="media/artist-songs/4.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<div class="song-card">
+				<div class="left">
+					<div class="song-number"> 10 </div>
+					<div class="song-image"><img src="media/artist-songs/5.jpg"></div>
+					<div class="song-name-artist">
+						<div>
+							<p class="song-name">Mirage</p>
+							<p class="song-artist">Else</p>
+						</div>
+					</div>
+				</div>
+				<div class="mid">
+					4:44
+				</div>
+				<div class="right">
+					<i class="far fa-heart"></i>
+					<i class="far fa-plus-square"></i>
+				</div>
+			</div>
+			<!-- HERE ENDS THE ARTIST SONGS SECTION -->
+		</section>
+	<!-- HERE ENDS THE MAIN -->
+	</main>
+
+
+	<!-- *******************************************************************************************
+		*********************************************************************************************
+		****************************                           **************************************
+		****************************        ASIDE SECTION      **************************************
+		****************************                           **************************************
+		*********************************************************************************************
+		********************************************************************************************  -->
+
+	<aside>
+		<!-- THIS IS THE ASIDE SECTION OF THE PAGE AND CONTAINS 2 PARTS
+		1. LEFT ARROW VISIBLE FOR DISPLAYING ASIDE SECTION ON SMALL PIXEL DEVICES
+		2. ASIDE MAIN SECTION 
+
+			THIS FURTHER HAVE TWO PARTS 
+			1. SIMILAR ARTISTS
+			2. RECENTLY PLAYED SONGS -->
+		<div id="left-arrow-menu">
+			<!-- THIS DIV MAKES THE LEFT ARROW OPTION -->
+			<!-- THIS IS VISIBLE ONLY ON SMALL PIXEL DEVICES 
+			HOVERING OVER THIS WILL MAKE THE ASIDE SECTION VISIBLE OVER THE PAGE -->
+			<i class="fas fa-angle-double-left"></i> <span id="more">More</span>
+		</div>
+		<div id="aside-main">
+			<!-- THIS IS THE MAIN APRT OF THE ASIDE SECTION  -->
+
+			<div id="similar-artists">
+			<!-- THIS IS THE SECTION FOR SIMILAR ARTISTS
+			THIS FURTHER HAVE TWO PARTS
+			1. HEADING
+			2. CONTENT  -->
+				<div class="heading-view-all">
+					<!-- THIS IS THE HEADING -->
+					<span class="heading">Similar Artists</span>
+					<span class="view-all">View All</span>
+				</div>
+				<div id="similar-artists-list">
+				<!-- THIS IS THE GROUP OF SIMILAR ARTISTS IN THE FORM OF CONTINOUS DIVS
+				AND IS DIVIDED FURTHER AS CARDS -->
+					<div class="artist-card">
+					<!-- THIS IS THE FIRST CARD -->
+						<!-- this is image -->
+						<div class="artist-card-image display-ib"><img src="media/queue/closer.jpg"></div>
+						<!-- this is detail -->
+						<div class="artist-card-detail display-ib">
+							<!-- this is its name and BAND of artist SONG -->
+							<div class="name-band display-ib">Mirage<br><div class="artist-band">Pop Band</div></div>
+							<!-- here starts the menu for that artist -->
+							<div class="option display-ib">
+								<!-- this is the three dot for the menu to appear -->
+								<div class="artist-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+								<!-- this is menu div , its display is none by default and is to block on hover over 3 dots on th top --> 
+								<div class="artist-dropdown-menu">
+									<ul type="none">
+										<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+										<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+										<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+										<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+									</ul>
+								</div>
+							</div>
+							<!-- this is the time length of the song -->
+							<div class="time">
+								5:30
+							</div>
+						</div>
+					<!-- I have given a functionality that on hovering over any artist , a div appears with certain background image and a play button , this div is for the same purpose , by default , this div is hidden and appears only on hovering  -->
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+				<!-- </div> -->
+				<div class="artist-card">
+					<!-- THIS IS HE SECOIND CARD -->
+					<div class="artist-card-image display-ib"><img src="media/latest english/I'll Wait.jpg"></div>
+					<div class="artist-card-detail display-ib">
+						<div class="name-band display-ib"> I'll Wait<br><div class="artist-band">Pop Band</div></div>
+						<div class="option display-ib">
+							<div class="artist-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="artist-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							5:30
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+				<div class="artist-card">
+					<div class="artist-card-image display-ib"><img src="media/queue/closer.jpg"></div>
+					<div class="artist-card-detail display-ib">
+						<div class="name-band display-ib">Havana<br><div class="artist-band">Pop Band</div></div>
+						<div class="option display-ib">
+							<div class="artist-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="artist-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							5:30
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+				<div class="artist-card">
+					<div class="artist-card-image display-ib"><img src="media/latest english/I'll Wait.jpg"></div>
+					<div class="artist-card-detail display-ib">
+						<div class="name-band display-ib"> I'll Wait<br><div class="artist-band">Pop Band</div></div>
+						<div class="option display-ib">
+							<div class="artist-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="artist-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							5:30
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+				<div class="artist-card">
+					<div class="artist-card-image display-ib"><img src="media/latest english/I'll Wait.jpg"></div>
+					<div class="artist-card-detail display-ib">
+						<div class="name-band display-ib"> I'll Wait<br><div class="artist-band">Pop Band</div></div>
+						<div class="option display-ib">
+							<div class="artist-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="artist-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							5:30
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+			</div></div>
+			<!-- HERE ENDS THE SIMILAR ARTISTS SECRTION -->
+
+
+			
+			<div id="recently-played">
+			<!-- THIS IS THE SECTION FOR RECENTLY PLAYED -->
+				<div class="heading-view-all">
+					<span class="heading">Recently Played</span>
+					<span class="view-all">View All</span>
+				</div>
+				<div id="recently-played-list">
+					<!-- IT IS AN UNORDERED LSIT  -->
+					<ul type="none">
+						<li>
+							<!-- EVERY LIST ITEM CONTAINS A NUMBERING , SONG IMAGE , SONG DETAIL AND FAVOIUITE BUTTON -->
+							<div class="recently-played-item">
+								<!-- THIS IS THE SEQUENCE NUMBER -->
+								<div class="number display-ib" id="now-playing"><i class="fas fa-volume-down"></i></div>
+								<!-- THIS IS THE SONG IMAGE -->
+								<div class="recently-played-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+								<!-- THIS IS SONG DETAIL -->
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Roar</div>
+									<div class="singer">Camila </div>
+								</div>
+								<!-- THIS IS THE FAVOURITE SONG ICON -->
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+
+						<!-- SECOND LIST ITEM -->
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">02</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/tere sang yara.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Tere Sang</div>
+									<div class="singer">Atif Aslam</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">03</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Havana</div>
+									<div class="singer">Camila</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">04</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/galiyaan.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Galiyaan</div>
+									<div class="singer">Ankit Tiwari</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">05</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/kaun tujhe.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Kaun Tujhe</div>
+									<div class="singer">Palak Mushhal</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">06</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Closer</div>
+									<div class="singer">Chainsmokers</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">07</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/tere sang yara.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Tere Sang</div>
+									<div class="singer">Atif Aslam</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">08</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Havana</div>
+									<div class="singer">Camila</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">09</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Havana</div>
+									<div class="singer">Camila</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">10</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/kaun tujhe.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Kaun Tujhe</div>
+									<div class="singer">Palak Mushhal</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">11</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Closer</div>
+									<div class="singer">Chainsmokers</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">12</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/tere sang yara.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Tere Sang</div>
+									<div class="singer">Atif Aslam</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">13</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Havana</div>
+									<div class="singer">Camila</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">14</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/kaun tujhe.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Kaun Tujhe</div>
+									<div class="singer">Palak Mushhal</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+						<li>
+							<div class="recently-played-item">
+								<div class="number display-ib">15</div>
+								<div class="recently-played-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+								<div class="recently-played-item-detail display-ib">
+									<div class="song">Closer</div>
+									<div class="singer">Chainsmokers</div>
+								</div>
+								<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- HERE ENDS THE ASIDE SECTION -->
+	</aside>
+
+
+
+	<!-- 
+	*******************************************************************************************
+	*********************************************************************************************
+	****************************                           **************************************
+	****************************        FOOTER PLAYER      **************************************
+	****************************                           **************************************
+	*********************************************************************************************
+	********************************************************************************************  -->
+
+	<!-- HERE STARTS THE FOOTER SECTION OF THE PAGE WHICH IS BASICALLY THE PLAYER AND SHOWS ABOUT CURRENTLY PLAYING SONG -->
+	
+	<!-- THIS SECTION HAS THREE PARTS 
+	1. DETAILS ABOUT CURRENT SONG
+	2. CONTROLS
+	3. OTHER CONTROLS -->
+	<footer>
+
+		<!-- THIS IS THE FIRST PART I.E. INFO OF THE SONG CURRENTLY PLAYED -->
+		<div id="current-song">
+			<!-- THIS IS SONG IMAGE -->
+			<div id="current-song-image">
+				<img src="media/latest english/let me go.jpg">
+			</div>
+			<!-- THIS IS NAME AND SINGER -->
+			<div id="current-song-detail">
+				<div class="song">Roar</div>
+				<br>
+				<div class="singer">Camila</div>
+			</div>
+			<!-- THIS IS FAVOURITE AND REMOVE BUTTON -->
+			<div id="current-song-fn">
+				<i class="far fa-heart"></i>
+				&nbsp;
+				<i class="fas fa-ban"></i>
+			</div>
+		</div>
+
+		<!-- THIS SECTION CONTAINS THE CONTROLS AND IS NAMED AS PROGRESS BCZ ITS SHOWS THE PROGRESS OF THE SONG -->
+		<!-- THIS SECTION CONTAINS TWO PARTS 
+		1. CONTROLS AS A LIST
+		2. SLIDER AS A RANGE TYPE OF INPUT -->
+		<div id="progress">
+			<!-- THESE ARE CONTROL ICONS -->
+			<div id="progress-icons">
+				<ul type="none" class="horizontal-list">
+					<li><i class="fas fa-random"></i></li>
+					<li><i class="fas fa-step-backward"></i></li>
+					<li id="play-pause"><i class="far fa-pause-circle"></i></li>
+					<li><i class="fas fa-step-forward"></i></li>
+					<li><i class="fas fa-redo-alt"></i></li>
+				</ul>
+			</div>
+			<!-- THIS A PROGRESS INDICATOR -->
+			<div id="progress-bar">
+				<span id="running-time">1:04</span>&nbsp;
+				<input type="range" name="">&nbsp;
+				<span id="total-time">5:37</span>
+			</div>
+		</div>
+		<div id="volume">
+			<!-- THIS I THE LAST PART AND CONTAINS VOLUME CONTROL AND SOME OTHER ICONS -->
+			<ul type="none" class="horizontal-list">
+				<li><i class="fas fa-server"></i></li>
+				<li><i class="fas fa-laptop"></i></li>
+				<li><i class="fas fa-volume-up"></i></li>
+				<li id="volume-range"><input type="range" name=""></li>
+			</ul>
+		</div>
+		<div id="expand" ><i class="fas fa-expand-alt"></i></div>
+
+		<!-- HERE ENDS THE FOOTER SECTION -->
+	</footer>
+</body>
+</html>

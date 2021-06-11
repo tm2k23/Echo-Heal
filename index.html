@@ -1,0 +1,856 @@
+
+<!-- 
+THIS PROJECT IS COMPLETELY MADE USING HTML AND CSS AND USES NO FRAMEWORKS
+
+THIS PLAYER IS JUST THE FRONTEND WITHOUT JAVA SCRIPT AND HENCE NO FUNCTIONALITY
+
+THIS WEBPAGE IS FULLY RESPONSIVE AS FAR AS POSSIBLE
+
+THIS PLAYER HAVE A ISSUE IN CRAOUSEL SECTION 
+		
+		ISSUE :  on hovering over the first carousel , second carousel gets blur , but this is not done on 				hovering on third carousel 
+
+		REASON : We dont have any selector in css to select the div above that div , that is why it fails on       h         hovering over third carousel because second carousel is above it in html code
+
+		SOLUTION : We can solve it using JS (not taught till now).
+
+THIS PAGE WILL TAKE YOU TO ANOTHER WEBPAGE I.E. ARTIST PAGE IF U SELECT ANY ARTIST 
+
+NOTE :::: THIS FILE IS PROPERLY COMMENTED , INFACT READING ONLY THE COMMENTS WILL EXPLAIN YOU THE WHOLE PROJECT
+
+
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Echo Heal is the title of the page and also the name of music player -->
+	<title>Echo Heal</title>
+
+	<!-- This is viewport meta data -->
+	<meta charset="utf-8" name="viewport" content="initial-scale=1 , width=device-width">
+
+	<!-- Font Awesome Icons Are used completely offline -->
+	<link href="fontawesome/css/all.css" rel="stylesheet">
+	<script defer src="fontawesome/js/all.js"></script>
+	<link href="fontawesome/css/fontawesome.css" rel="stylesheet">
+  	<link href="fontawesome/css/brands.css" rel="stylesheet">
+  	<link href="fontawesome/css/solid.css" rel="stylesheet">
+  	<script defer src="fontawesome/js/brands.js"></script>
+  	<script defer src="fontawesome/js/solid.js"></script>
+  	<script defer src="fontawesome/js/fontawesome.js"></script>
+
+  	<!-- Stylesheet of this page -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- this adds shortcut icon to the webpage -->
+	<link rel="icon" type="image/x-icon" href="media/logo.png">
+
+	<!-- Font awesome online files are also included for the cases when icons are not available offline -->
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+	<!-- *******************************************************************************************
+		*********************************************************************************************
+		****************************                           **************************************
+		****************************        TOP NAV BAR        **************************************
+		****************************                           **************************************
+		*********************************************************************************************
+		******************************************************************************************** 
+	-->
+	<!-- This section makes the top part of the webpage -->
+	<nav >
+		<div id="logo"><a href="#"><img src="media/logo.png"></a></div>
+		<div id="player-name">Echo<br><b>Heal</b></div>
+		<div id="favourite-icon"><i class="fas fa-heart"></i></div>
+		<div id="favourite">Favourite</div>
+		<!-- this div makes the search box -->
+		<div id="search">
+			<span id="music"><i class="fas fa-music"></i></span>
+			<input type="text" name="search-query" placeholder="Search">
+			<span id="microphone"><i class="fas fa-microphone"></i></span>
+		</div>
+		<div id="notification"><i class="fas fa-bell"></i></div>
+		<div id="user"><img src="media/profile.jpg"></div>
+	</nav>
+
+	<!-- *******************************************************************************************
+		*********************************************************************************************
+		****************************                           **************************************
+		****************************        MAIN SECTION       **************************************
+		****************************                           **************************************
+		*********************************************************************************************
+		********************************************************************************************
+	-->
+
+	<!-- Here starts the main section of the -->
+	 <main>
+
+
+	 	<!-- First section is carousel section which has 3 images -->
+		<section id="carousel">
+			<div id="carousel1"><img src="media/carousel/carousel1.jpg"></div>
+			<div id="carousel2"><img src="media/carousel/carousel2.jpg"></div>
+			<div id="carousel3"><img src="media/carousel/carousel3.jpg"></div>
+		</section>
+
+
+		<!-- This heading is for the next section i.e. Latest Releases -->
+		<h3 class="section-title">Latest Release</h3>
+		<!-- here starts latest releases section -->
+		<section id="release">
+				<!-- now here every release is considered as a card which has its content
+				1. Image
+				2. Its Detail 
+				
+				Note ::::::   display-ib class is used to make the things inline block
+				-->
+				<div class="release-card">
+					<!-- this is image -->
+					<div class="release-card-image display-ib"><img src="media/latest english/I'll Wait.jpg"></div>
+					<!-- this is detail -->
+					<div class="release-card-detail display-ib">
+						<!-- this is its name and date of release -->
+						<div class="name-date display-ib"> I'll Wait<br><div class="release-date">SEP 13,2020</div></div>
+						<!-- here starts the menu for that release -->
+						<div class="option display-ib">
+							<!-- this is the three dot for the menu to appear -->
+							<div class="release-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<!-- this is menu div , its display is none by default and is to block on hover over 3 dots on th top --> 
+							<div class="release-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<!-- this is the time length of the song -->
+						<div class="time">
+							5:30
+						</div>
+					</div>
+					<!-- I have given a functionality that on hovering over any release , a div appears with certain background image and a play button , this div is for the same purpose , by default , this div is hidden and appears only on hovering  -->
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+
+				<!-- release card 2 -->
+				<div class="release-card">
+					<div class="release-card-image display-ib"><img src="media/latest hindi/baarish.jpeg"></div>
+					<div class="release-card-detail display-ib">
+						 <div class="name-date display-ib">Baarish <br><div class="release-date">SEP 13,2020</div></div>
+						<div class="option display-ib">
+							<div class="release-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="release-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							4:44
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+
+				<!-- release card 3 -->
+				<div class="release-card">
+					<div class="release-card-image display-ib"><img src="media/latest english/let me go.jpg"></div>
+					<div class="release-card-detail display-ib">
+						<div class="name-date display-ib">Let Me Go <br><div class="release-date">SEP 13,2020</div></div>
+						<div class="option display-ib">
+							<div class="release-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="release-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							2:30
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+
+				<!-- release card 4 -->
+				<div class="release-card">
+					<div class="release-card-image display-ib"><img src="media/latest english/roar.jpg"></div>
+					<div class="release-card-detail display-ib">
+						<div class="name-date display-ib">Roar <br><div class="release-date">SEP 13,2020</div></div>
+						<div class="option display-ib">
+							<div class="release-dropdown-icon"><i class="fas fa-ellipsis-h"></i></div>
+							<div class="release-dropdown-menu">
+								<ul type="none">
+									<li><i class="fas fa-play-circle"></i>&nbsp;&nbsp;Play Now</li>
+									<li><i class="fas fa-server"></i>&nbsp;&nbsp;Add to Queue</li>
+									<li><i class="fas fa-music"></i>&nbsp;&nbsp;Add to Playlist</li>
+									<li><i class="fas fa-info-circle"></i>&nbsp;&nbsp;Get Info</li>
+								</ul>
+							</div>
+						</div>
+						<div class="time">
+							6:15
+						</div>
+					</div>
+					<div class="hover-play">
+						<div class="hover-play-button"><i class="fas fa-play"></i></div>
+					</div>
+				</div>
+				<!-- here ends the new releases section -->
+		</section><br><br>
+
+
+
+
+
+
+		<!-- This heading is for the next section i.e. Popular Artists -->
+		<h3 class="section-title">Popular Artists</h3><br>
+		<!-- here starts the artists section -->
+		<section id="artists">
+			<!-- this is the first content of the artists section 
+			every content contains a figure with the image of artist and its cation as name -->
+			<div class="artist-detail">
+				<!-- this is image of the artist -->
+				<figure class="artist-image">
+					<img src="media/artists/ed-sheeran.jpg">
+				</figure>
+				<!-- this is name of the artist -->
+				<figcaption class="artist-name">
+					Ed Sheeran
+				</figcaption>
+				<!-- I have given a functionality that on hovering over any artist image , a div appears with certain background image and a play button , this div is for the same purpose , by default , this div is hidden and appears only on hovering  -->
+				<div class="expand-artist">
+					<a href="artist.html"><div class="expand-artist-icon"><i class="fas fa-play"></i></div></a>
+				</div>
+			</div>
+
+			<!-- artist 2 -->
+			<div class="artist-detail">
+				<figure class="artist-image">
+					<img src="media/artists/coldplay.jpg">
+				</figure>
+				<figcaption class="artist-name">
+					Coldplay
+				</figcaption>
+				<div class="expand-artist">
+					<a href="artist.html"><div class="expand-artist-icon"><i class="fas fa-play"></i></div></a>
+				</div>
+			</div>
+
+			<!-- artist 3 -->
+			<div class="artist-detail">
+				<figure class="artist-image">
+					<img src="media/artists/zayn.jpg">
+				</figure>
+				<figcaption class="artist-name">
+					Zayn
+				</figcaption>
+				<div class="expand-artist">
+					<a href="artist.html"><div class="expand-artist-icon"><i class="fas fa-play"></i></div></a>
+				</div>
+			</div>
+
+			<!-- artist 4 -->
+			<div class="artist-detail">
+				<figure class="artist-image">
+					<img src="media/artists/charlie-puth.jpg">
+				</figure>
+				<figcaption class="artist-name">
+					Charlie Puth
+				</figcaption>
+				<div class="expand-artist">
+					<a href="artist.html"><div class="expand-artist-icon"><i class="fas fa-play"></i></div></a>
+				</div>
+			</div>
+
+			<!-- artist 5 -->
+			<div class="artist-detail">
+				<figure class="artist-image">
+					<img src="media/artists/imagine-dragon.jpg">
+				</figure>
+				<figcaption class="artist-name">
+					Imagine Dragon
+				</figcaption>
+				<div class="expand-artist">
+					<a href="artist.html"><div class="expand-artist-icon"><i class="fas fa-play"></i></div></a>
+				</div>
+			</div>
+
+			<!-- artist 6  -->
+			<div class="artist-detail">
+				<figure class="artist-image">
+					<img src="media/artists/bruno-mars.jpg">
+				</figure>
+				<figcaption class="artist-name">
+					Bruno Mars
+				</figcaption>
+				<div class="expand-artist">
+					<a href="artist.html"><div class="expand-artist-icon"><i class="fas fa-play"></i></div></a>
+				</div>
+			</div>
+			<!-- here ends the artists section -->
+		</section>
+		<br><br><br>
+
+
+		<!-- ################ this is station section ################ -->
+		<section id="stations">
+		<!-- it has two parts 
+		1. Logo 
+		2. list of stations -->
+			<div id="station-logo">
+			<!-- logo has three layers 
+			1. bottom
+			2.mid
+			3. top -->
+				<div id="bottom">
+					<div id="mid">
+						<div id="top">
+							<!-- top layer has a image and a word station -->
+							<div><img src="media/logo.png"></div>
+							<div id="station-title">Stations</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- here starts the list of statiopn -->
+			<div id="station-list">
+				<div class="station-detail">
+
+					<div class="station-image"><img src="media/stations/workout.jpg"></div> <!-- station image -->
+					<div class="station-name">
+						<!-- station name -->
+						<div>Workout</div>
+					</div>
+				</div>
+				<div class="station-detail">
+					<div class="station-image"><img src="media/stations/rock.jpg"></div>
+					<div class="station-name">
+						<div>Rock</div>
+					</div>
+				</div>
+				<div class="station-detail">
+					<div class="station-image"><img src="media/stations/pop.jpg"></div>
+					<div class="station-name">
+						<div>Pop</div>
+					</div>
+				</div>
+				<div class="station-detail">
+					<div class="station-image"><img src="media/stations/chill.jpg"></div>
+					<div class="station-name">
+						<div>Chill</div>
+					</div>
+				</div>
+				<div class="station-detail">
+					<div class="station-image"><img src="media/stations/love.jpg"></div>
+					<div class="station-name">
+						<div>Love</div>
+					</div>
+				</div>
+				<div class="station-detail">
+					<div class="station-image"><img src="media/stations/retro.jpg"></div>
+					<div class="station-name">
+						<div>Retro</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<br><br><br>
+
+
+
+		<!-- there is a category section also which has three categories
+		1. party
+		2. electronics
+		3. road -->
+		<!-- here starts the catrgory sectiom -->
+		<section id="category">
+			<!-- Every div has a card which contains a image i.e. theme and the category name -->
+			<div class="category-card">
+				<!-- this is category image -->
+				<img src="media/category/party.jpg" class="category-card-background">
+				<!-- this is category name -->
+				<div class="category-card-name" id="party">Party</div>
+			</div>
+			<!-- this is second card -->
+			<div class="category-card">
+				<img src="media/category/electronic.jpg" class="category-card-background">
+				<div class="category-card-name" id="electronic">Electronic</div>
+			</div>
+			<!-- this is third card -->
+			<div class="category-card">
+				<img src="media/category/road.jpg" class="category-card-background">
+				<div class="category-card-name" id="road-trip">Road Trip</div>
+			</div>
+			<!-- here ends the category section -->
+		</section><br>
+		
+
+		<!-- This heading is for the next section i.e. Latest English -->
+		<h3 class="section-title">Latest English</h3>
+		<!-- here starts the section  -->
+		<section id="english">
+			<!-- in this section every section contains a div which has a figure and its caption  -->
+			<div>
+				<!-- this is the song thumbnail image -->
+				<figure>
+					<img src="media/latest english/I'll Wait.jpg">
+				</figure>
+				<!-- figure caption contains song name and its date of release  -->
+				<figcaption>
+					<div class="english-name">I'll Wait</div>
+					<div class="english-date"> SEP 11,2020</div>
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest english/let me go.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Let Me Go</div>
+					<div class="english-date">SEP 09,2020</div>					
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest english/qurantine clean.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Quarantine Clean</div>
+					<div class="english-date">AUG 31,2020</div>					
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest english/roar.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Roar</div>
+					<div class="english-date">AUG 23,2020</div>	
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest english/toosie slide.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Toosie Slide</div>
+					<div class="english-date">AUG 16,2020</div>					
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest english/uptown funk.png">
+				</figure>
+				<figcaption>
+					<div class="english-name">Uptown Funk</div>
+					<div class="english-date">JUL 25,2020</div>
+				</figcaption>
+			</div>
+			<!-- here ends the section of latest english releases  -->
+		</section><br>
+
+
+
+		<!-- This heading is for the next section i.e. Latest Hindi -->
+		<h3 class="section-title">Latest Hindi</h3>
+		<!-- here starts the section 
+
+		NOTE :::: THIS SECTION IS TOTALLY SAME AS THE SECTION OF LATEST ENGLISH SO I HAVE USED SAME CLASSES AS WELL THAT IS WHY THE CLASS NAME OF HINDI SECTION CONTAINS ENGLISH WORD
+
+		-->
+		<section id="hindi">
+			<div>
+				<figure>
+					<img src="media/latest hindi/baarish.jpeg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Baarish</div>
+					<div class="english-date">JUL 25,2020</div>
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest hindi/galiyaan.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Galiyaan</div>
+					<div class="english-date">AUG 16,2020</div>		
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest hindi/tere sang yara.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Tere Sang</div>
+					<div class="english-date">AUG 23,2020</div>	
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest hindi/giveme some sunshine.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Sunshine</div>
+					<div class="english-date">AUG 31,2020</div>		
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest hindi/kaun tujhe.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Kaun Tujhe</div>
+					<div class="english-date">SEP 09,2020</div>	
+				</figcaption>
+			</div>
+			<div>
+				<figure>
+					<img src="media/latest hindi/tera ban jaunga.jpg">
+				</figure>
+				<figcaption>
+					<div class="english-name">Tera Ban Jauga</div>
+					<div class="english-date"> SEP 11,2020</div>
+				</figcaption>
+			</div>
+		</section>
+		<br><br><br><br>
+	</main>
+
+	<!-- HERE ENDS THE MAIN SECTION -->
+
+
+
+
+	 <!-- *******************************************************************************************
+		*********************************************************************************************
+		****************************                           **************************************
+		****************************        ASIDE SECTION      **************************************
+		****************************                           **************************************
+		*********************************************************************************************
+		********************************************************************************************  -->
+	
+
+	<!-- THIS ASIDE SECTION IS FOR THE SECTION ON THE RIGHT OF THE PAGE
+		
+		THIS SECTION CONTAINS TWO THINGS
+
+		1. UPPER SECTION I.E. HEADING AND A DROP DOWM MENU 
+		2. LIST OF SONGS 
+
+	 -->
+<aside>
+		<!-- THIS IS THE UPPER SECTION OF ASIDE SECTION I.E. HEADING AND THE DROPDOWN MENU  -->
+	<div id="left-arrow-menu"><i class="fas fa-angle-double-left"></i> <span id="more">More</span></div>
+	<div id="aside-main">
+		<div class="name-dropdown">
+			<!-- THIS IS THE HEADING -->
+			<div class="display-ib" id="aside-name">
+				<h2>Queue</h2>
+			</div>
+			<!-- THIS IS THE DROPDOWN MENU -->
+			<div class="display-ib" id="dropdown">
+				<!-- THIS IS THE DROPDOWN ICON -->
+				<div id="dropdown-icon"> Playlist &nbsp;<i class="fas fa-chevron-circle-down"></i></div>
+				<!-- THIS IS DROPDOWN MENU , BY DEFAULT ITS DISPLAY IS NONE AND IT APPEARS ONLY ON HOVERING OVER THE DROPDOWN ICON  -->
+				<div class="dropdown-menu">
+					<ul type="none">
+						<li class="playlist-button">Playlist</li>
+						<hr>
+						<li class="favourite-button">Favourite Songs</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- HERE STARTS THE LIST ON SONGS -->
+		<div id="queue-list">
+			<!-- IT IS AN UNORDERED LSIT  -->
+			<ul type="none">
+				<li>
+					<!-- EVERY LIST ITEM CONTAINS A NUMBERING , SONG IMAGE , SONG DETAIL AND FAVOIUITE BUTTON -->
+					<div class="queue-item">
+						<!-- THIS IS THE SEQUENCE NUMBER -->
+						<div class="number display-ib" id="now-playing"><i class="fas fa-volume-down"></i></div>
+						<!-- THIS IS THE SONG IMAGE -->
+						<div class="queue-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+						<!-- THIS IS SONG DETAIL -->
+						<div class="queue-item-detail display-ib">
+							<div class="song">Closer</div>
+							<div class="singer">Chainsmokers</div>
+						</div>
+						<!-- THIS IS THE FAVOURITE SONG ICON -->
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+
+				<!-- SECOND LIST ITEM -->
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">02</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/tere sang yara.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Tere Sang</div>
+							<div class="singer">Atif Aslam</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">03</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Havana</div>
+							<div class="singer">Camila</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">04</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/galiyaan.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Galiyaan</div>
+							<div class="singer">Ankit Tiwari</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">05</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/kaun tujhe.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Kaun Tujhe</div>
+							<div class="singer">Palak Mushhal</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">06</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Closer</div>
+							<div class="singer">Chainsmokers</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">07</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/tere sang yara.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Tere Sang</div>
+							<div class="singer">Atif Aslam</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">08</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Havana</div>
+							<div class="singer">Camila</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">09</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Havana</div>
+							<div class="singer">Camila</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">10</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/kaun tujhe.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Kaun Tujhe</div>
+							<div class="singer">Palak Mushhal</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">11</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Closer</div>
+							<div class="singer">Chainsmokers</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">12</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/tere sang yara.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Tere Sang</div>
+							<div class="singer">Atif Aslam</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">13</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/havana.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Havana</div>
+							<div class="singer">Camila</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">14</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/kaun tujhe.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Kaun Tujhe</div>
+							<div class="singer">Palak Mushhal</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<li>
+					<div class="queue-item">
+						<div class="number display-ib">15</div>
+						<div class="queue-item-image display-ib"><img src="media/queue/closer.jpg"></div>
+						<div class="queue-item-detail display-ib">
+							<div class="song">Closer</div>
+							<div class="singer">Chainsmokers</div>
+						</div>
+						<div class="add-favourite display-ib"><i class="far fa-heart"></i></div>
+					</div>
+				</li>
+				<br>
+				<br>
+			</ul>
+		</div>
+	</div>
+		<!-- HERE ENDS THE ASIDE SECTION -->
+	</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+	*******************************************************************************************
+	*********************************************************************************************
+	****************************                           **************************************
+	****************************        FOOTER PLAYER      **************************************
+	****************************                           **************************************
+	*********************************************************************************************
+	********************************************************************************************  -->
+
+	<!-- HERE STARTS THE FOOTER SECTION OF THE PAGE WHICH IS BASICALLY THE PLAYER AND SHOWS ABOUT CURRENTLY PLAYING SONG -->
+	
+	<!-- THIS SECTION HAS THREE PARTS 
+	1. DETAILS ABOUT CURRENT SONG
+	2. CONTROLS
+	3. OTHER CONTROLS -->
+	<footer>
+
+		<!-- THIS IS THE FIRST PART I.E. INFO OF THE SONG CURRENTLY PLAYED -->
+		<div id="current-song">
+			<!-- THIS IS SONG IMAGE -->
+			<div id="current-song-image">
+				<img src="media/latest english/let me go.jpg">
+			</div>
+			<!-- THIS IS NAME AND SINGER -->
+			<div id="current-song-detail">
+				<div class="song">Roar</div>
+				<br>
+				<div class="singer">Camila</div>
+			</div>
+			<!-- THIS IS FAVOURITE AND REMOVE BUTTON -->
+			<div id="current-song-fn">
+				<i class="far fa-heart"></i>
+				&nbsp;
+				<i class="fas fa-ban"></i>
+			</div>
+		</div>
+
+		<!-- THIS SECTION CONTAINS THE CONTROLS AND IS NAMED AS PROGRESS BCZ ITS SHOWS THE PROGRESS OF THE SONG -->
+		<!-- THIS SECTION CONTAINS TWO PARTS 
+		1. CONTROLS AS A LIST
+		2. SLIDER AS A RANGE TYPE OF INPUT -->
+		<div id="progress">
+			<!-- THESE ARE CONTROL ICONS -->
+			<div id="progress-icons">
+				<ul type="none" class="horizontal-list">
+					<li><i class="fas fa-random"></i></li>
+					<li><i class="fas fa-step-backward"></i></li>
+					<li id="play-pause"><i class="far fa-pause-circle"></i></li>
+					<li><i class="fas fa-step-forward"></i></li>
+					<li><i class="fas fa-redo-alt"></i></li>
+				</ul>
+			</div>
+			<!-- THIS A PROGRESS INDICATOR -->
+			<div id="progress-bar">
+				<span id="running-time">1:04</span>&nbsp;
+				<input type="range" name="">&nbsp;
+				<span id="total-time">5:37</span>
+			</div>
+		</div>
+		<div id="volume">
+			<!-- THIS I THE LAST PART AND CONTAINS VOLUME CONTROL AND SOME OTHER ICONS -->
+			<ul type="none" class="horizontal-list">
+				<li><i class="fas fa-server"></i></li>
+				<li><i class="fas fa-laptop"></i></li>
+				<li><i class="fas fa-volume-up"></i></li>
+				<li id="volume-range"><input type="range" name=""></li>
+			</ul>
+		</div>
+		<div id="expand" ><i class="fas fa-expand-alt"></i></div>
+
+		<!-- HERE ENDS THE FOOTER SECTION -->
+	</footer>
+</body>
+</html>
